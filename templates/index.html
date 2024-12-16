@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crime Rate Prediction</title>
+    <link rel="icon" href="static/images/favicon.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-900 font-sans text-white">
+    <!-- Hero Section -->
+    <header
+      class="bg-cover bg-center h-screen bg-fixed"
+      style="background-image: url('static/images/crime.jpg')"
+    >
+      <div
+        class="bg-black bg-opacity-60 h-full flex flex-col items-center justify-center"
+      >
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+          Crime Rate Predictor
+        </h1>
+        <p class="text-xl md:text-3xl mb-8">
+          Stay Ahead, Stay Safe: Predict Future Crime Trends
+        </p>
+        <a
+          href="#form-section"
+          class="px-8 py-4 bg-red-600 text-lg font-semibold hover:bg-red-800 transition"
+          >Start Prediction</a
+        >
+      </div>
+    </header>
+
+    <!-- Form Section -->
+    <section id="form-section" class="py-16 bg-gray-800">
+      <div class="max-w-3xl mx-auto p-8 shadow-xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Predict Crime Rate</h2>
+        <form action="/predict" method="POST">
+          <div class="mb-6">
+            <label for="city" class="block text-sm font-semibold mb-2"
+              >Select City Name</label
+            >
+            <select
+              id="city"
+              name="city"
+              class="w-full p-3 bg-gray-700 text-white border border-gray-600"
+            >
+              <option value="0">Ahmedabad</option>
+              <option value="1">Bengaluru</option>
+              <option value="2">Chennai</option>
+              <option value="3">Coimbatore</option>
+              <option value="4">Delhi</option>
+              <option value="5">Ghaziabad</option>
+              <option value="6">Hyderabad</option>
+              <option value="7">Indore</option>
+              <option value="8">Jaipur</option>
+              <option value="9">Kanpur</option>
+              <option value="10">Kochi</option>
+              <option value="11">Kolkata</option>
+              <option value="12">Kozhikode</option>
+              <option value="13">Lucknow</option>
+              <option value="14">Mumbai</option>
+              <option value="15">Nagpur</option>
+              <option value="16">Patna</option>
+              <option value="17">Pune</option>
+              <option value="18">Surat</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label for="crime" class="block text-sm font-semibold mb-2"
+              >Select Crime Type</label
+            >
+            <select
+              id="crime"
+              name="crime"
+              class="w-full p-3 bg-gray-700 text-white border border-gray-600"
+            >
+              <option value="9">Murder</option>
+              <option value="8">Kidnapping</option>
+              <option value="7">Economic Offences</option>
+              <option value="6">Cyber Crimes</option>
+              <option value="5">Crime against Women</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label for="year-dropdown" class="block text-sm font-semibold mb-2"
+              >Select Year</label
+            >
+            <select
+              id="year-dropdown"
+              name="year"
+              class="w-full p-3 bg-gray-700 text-white border border-gray-600"
+            ></select>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-4 bg-red-600 text-white font-semibold hover:bg-red-800 transition"
+          >
+            Predict Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-16 bg-gray-900">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12">Key Statistics</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-6 shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">93% Prediction Accuracy</h3>
+            <p class="text-gray-400">
+              Our model offers high accuracy to help anticipate crime trends
+              effectively.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-6 shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">1500+ Data Points</h3>
+            <p class="text-gray-400">
+              We leverage a vast dataset to provide reliable predictions.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-6 shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">19 Cities Covered</h3>
+            <p class="text-gray-400">
+              Our predictions include data from 19 major cities across the
+              country.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="py-16 bg-gray-800">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">About This Application</h2>
+        <p class="text-gray-400 mb-6">
+          Our Crime Rate Predictor utilizes advanced machine learning algorithms
+          to forecast crime trends, empowering law enforcement and communities
+          to make informed decisions and enhance public safety.
+        </p>
+        <!-- <a href="#" target="_blank" class="text-red-600 hover:underline">View Project Report</a> -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+      <h3>Developed By: Jeswanth Ralph, Vasavi, Sreevani</h3>
+      <p>© 2024 All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const yearDropdown = document.getElementById("year-dropdown");
+        for (let year = 2000; year <= 2050; year++) {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          yearDropdown.appendChild(option);
+        }
+      });
+    </script>
+  </body>
+</html>

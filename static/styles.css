@@ -1,0 +1,148 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("static/images/hero-image.jpg") no-repeat center/cover;
+}
+
+.hero-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  background: #ff6347;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #ff4500;
+}
+
+/* Form Section */
+.form-section {
+  padding: 60px 20px;
+  background: #fff;
+  max-width: 600px;
+  margin: -80px auto 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+select,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.btn {
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f0f2f5;
+}
+
+.report-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.report-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-links img {
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+  }
+
+  .form-section {
+    margin-top: 0;
+  }
+}
